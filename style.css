@@ -1,0 +1,18 @@
+body{
+    background-color: #230312;
+    
+	font-family: "Open Sans", sans-serif;
+}
+
+.nav-item a:hover{
+    color: rgb(231, 71, 7) !important;
+}
+.search-btn{
+    background-color:rgb(249, 108, 52) !important ;
+    color: aliceblue !important;
+}
+
+.card{
+    background-color: #fd000000 !important;
+    color: white;
+}
