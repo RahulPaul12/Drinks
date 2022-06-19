@@ -16,3 +16,13 @@ body{
     background-color: #fd000000 !important;
     color: white;
 }
+.link{
+    color: white;
+    text-align: center;
+    font-size: 20px;
+margin-top: 0;
+margin-bottom: 20px;
+}
+span{
+    cursor: pointer;
+}

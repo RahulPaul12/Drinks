@@ -138,6 +138,38 @@ const searchBtn =document.getElementById('search-btn');
 
    }
 });
+
+
+for(let i=1;i<=26;i++){
+  let id = document.getElementById(i);
+  let finalid = document.getElementById(i).innerText.slice(2,3).toLowerCase()
+  id.addEventListener('click',function(){
+    fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${finalid}`)
+    .then(res=>res.json())
+    .then(data=>loadLetterDrinks(data.drinks))
+
+    const loadLetterDrinks =(drinks)=>{
+      const main = document.getElementById('main');
+      main.textContent='';
+     const row=document.getElementById('drinkShow');
+     row.innerText=''
+     for(const data of drinks){
+      const div = document.createElement('div');
+     div.classList.add('col-lg-3')
+     
+     div.innerHTML=`<div class="card h-80 rounded" onclick="detailsload('${data.idDrink}')">
+       <img src='${data.strDrinkThumb}' class="card-img-top ms-5" alt="..." style="width:75%;">
+       <div class="card-body">
+         <h5 class="card-title text-center">${data.strDrink}</h5>
+       </div>
+     </div>`
+    row.appendChild(div);
+   }
+    }
+  })
+}
+
+
   
 
 
